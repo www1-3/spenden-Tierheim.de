@@ -1,22 +1,22 @@
 const texte = [
-    "Hallo, Welt!",
-    "Willkommen auf meiner Seite.",
-    "Über Tiere!",
-    "Wir würden gerne Kakao verkaufen",
-    "und mit dem ganzen Geld würden wir dann",
-    "für die Tiere spenden" 
+    { text: "Hallo, Welt!", pause: 5 },  // 5 Sekunden Pause
+    { text: "Willkommen auf meiner Seite.", pause: 5 },  // 5 Sekunden Pause
+    { text: "Über Tiere!", pause: 3 },  // 3 Sekunden Pause
+    { text: "Wir würden gerne Kakao verkaufen", pause: 7 },  // 3 Sekunden Pause
+    { text: "und mit dem ganzen Geld würden wir dann", pause: 10 },  // 4 Sekunden Pause
+    { text: "für die Tiere spenden", pause: 5 }  // 2 Sekunden Pause
 ];
 
 let index = 0; // Welcher Text
 let charIndex = 0; // Welcher Buchstabe
 let deleting = false; // Schreiben oder löschen
-const speed = 100; // Schreibgeschwindigkeit
-const pause = 10000; // Pause nach Schreiben (in ms)
+const speed = 100; // Schreibgeschwindigkeit (für alle Sätze gleich)
 
 const typewriter = document.getElementById("typewriter");
 
 function typeLoop() {
-    const currentText = texte[index];
+    const currentText = texte[index].text; // Text des aktuellen Satzes
+    const currentPause = texte[index].pause * 1000; // Pause nach dem Satz in Millisekunden
 
     if (!deleting) {
         // Schreiben
@@ -24,9 +24,9 @@ function typeLoop() {
         charIndex++;
 
         if (charIndex === currentText.length) {
-            // Wenn fertig geschrieben, kurz warten, dann löschen
+            // Wenn fertig geschrieben, Pause und dann löschen
             deleting = true;
-            setTimeout(typeLoop, pause);
+            setTimeout(typeLoop, currentPause); // Pause für den aktuellen Satz
             return;
         }
     } else {
@@ -48,6 +48,3 @@ function typeLoop() {
 
 // Starten
 typeLoop();
-
-
-
