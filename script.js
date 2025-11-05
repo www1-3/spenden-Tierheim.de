@@ -11,7 +11,7 @@ let index = 0; // Welcher Text
 let charIndex = 0; // Welcher Buchstabe
 let deleting = false; // Schreiben oder löschen
 const speed = 100; // Schreibgeschwindigkeit
-const pause = 2050; // Pause nach Schreiben (in ms)
+const pause = 10000; // Pause nach Schreiben (in ms)
 
 const typewriter = document.getElementById("typewriter");
 
@@ -48,5 +48,6 @@ function typeLoop() {
 
 // Starten
 typeLoop();
+
 
 
