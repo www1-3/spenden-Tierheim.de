@@ -1,8 +1,8 @@
 const texte = [
-    "über das  Berliner Tierheim.",
-    "wie geht es den tieren.",
-    "was brachen die tiere.",
-    "welche tiere haben sie."
+    "Über das  Berliner Tierheim.",
+    "Wie geht es den Tieren.",
+    "Was brachen die Tiere.",
+    "Welche Tiere haben sie."
 
 ];
 
