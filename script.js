@@ -1,6 +1,6 @@
 const texte = [
-    { text: "Hallo, Welt!", pause: 5 },  // 5 Sekunden Pause
-    { text: "Willkommen auf meiner Seite.", pause: 3 },  // 5 Sekunden Pause
+    { text: "Hallo, Welt!", pause: 3 },  // 5 Sekunden Pause
+    { text: "Willkommen auf meiner Seite.", pause: 5 },  // 5 Sekunden Pause
     { text: "Über Tiere!", pause: 3 },  // 3 Sekunden Pause
     { text: "Wir würden gerne Kakao verkaufen", pause: 5 },  // 3 Sekunden Pause
     { text: "und mit dem ganzen Geld würden wir dann", pause: 6 },  // 4 Sekunden Pause
