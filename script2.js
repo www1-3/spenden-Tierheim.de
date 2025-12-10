@@ -1,7 +1,7 @@
 const texte = [
     "Über das  Berliner Tierheim.",
     "Wie geht es den Tieren.",
-    "Was brachen die Tiere.",
+    "Was brauchen die Tiere.",
     "Welche Tiere haben sie."
 
 ];
@@ -47,3 +47,4 @@ function typeLoop() {
 
 // Starten
 typeLoop();
+
