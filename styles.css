@@ -1,3 +1,4 @@
+/* Body-Style */
 body {
     font-family: 'Courier New', monospace;
     background-color: #f0f0f0;
@@ -5,28 +6,46 @@ body {
     margin-top: 100px;
 }
 
+/* Container für Überschrift */
 .container {
-    font-size: 32px;
+    font-size: 48px;  /* Größere Schrift für die Überschrift */
     font-weight: bold;
-    display: inline-block;
-    color: rgb(155, 138, 108);
+    color: #4A90E2;  /* Blaue Farbe */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Schatten für den Text */
+    animation: fadeIn 2s ease-out;  /* Einblenden der Überschrift */
+    margin-top: 50px;
 }
 
+/* Cursor-Effekt für den Typwriter-Effekt */
 .cursor {
     display: inline-block;
     color: black;
     animation: blink 0.7s infinite;
 }
 
+/* Typwriter-Blink-Effekt */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* FadeIn-Effekt für die Überschrift */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Navigationsleiste oben rechts */
 .top-nav {
     position: absolute;
     top: 20px;
-    right: 20px; /* statt left: 20px */
+    right: 20px;
 }
 
 .top-nav ul {
@@ -50,13 +69,34 @@ body {
 .top-nav li a:hover {
     background-color: #bbb;
 }
+
+/* Container für den 'Über' Bereich */
+#über {
+    padding: 30px 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+/* Flexbox für Bilder nebeneinander */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  /* Abstand zwischen den Bildern */
+    margin-top: 50px;
+}
+
+/* Image Card */
 .demo-card-image.mdl-card {
   width: 256px;
   height: 256px;
   background: url('v872batch10-nunny-05a.jpg') center / cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
-
+/* Zweites Bild - anderes Bild */
+.demo-card-image.mdl-card:nth-child(2) {
+  background: url('Berlin_Tierheim_in_Falkenberg_asv2022-07.jpg') center / cover;  /* Ersetze mit dem anderen Bild */
+}
