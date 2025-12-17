@@ -55,11 +55,7 @@ body {
   height: 256px;
   background: url('v872batch10-nunny-05a.jpg') center / cover;
 }
-.demo-card-image > .mdl-card__actions {
-  height: 52px;
-  padding: 16px;
-  background: rgba(0, 0, 0, 0.2);
-}
+
 
 
 
