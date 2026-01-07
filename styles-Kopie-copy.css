@@ -1,0 +1,119 @@
+/* BODY – erhebender Hintergrund */
+body {
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding-top: 120px;
+    text-align: center;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        -45deg,
+        #fff,
+        #fff,
+        #fff,
+        #fff
+    );
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+}
+
+/* Navigation */
+.top-nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #333;
+    background: rgba(255,255,255,0.8);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Überschrift */
+.container {
+    font-size: 48px;
+    font-weight: bold;
+    color: #4A90E2;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Textbox */
+#über {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 30px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* BILDER: 2 oben, 4 unten */
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+}
+
+.image-container .demo-card-image:nth-child(1),
+.image-container .demo-card-image:nth-child(2) {
+    grid-column: span 2;
+}
+
+/* Bildkarten */
+.demo-card-image {
+    height: 260px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Bilder (Dateinamen anpassen!) */
+.demo-card-image:nth-child(1) {
+    background-image: url('seal-4088157_1280.jpg');
+}
+.demo-card-image:nth-child(2) {
+    background-image: url('Berlin_Tierheim_in_Falkenberg_asv2022-07.jpg');
+}
+.demo-card-image:nth-child(3) {
+    background-image: url('pexels-jonnylew-1547836.jpg');
+}
+.demo-card-image:nth-child(4) {
+    background-image: url('pexels-kpaukshtite-1839753.jpg');
+}
+.demo-card-image:nth-child(5) {
+    background-image: url('pexels-molnartamasphotography-35127701.jpg');
+}
+.demo-card-image:nth-child(6) {
+    background-image: url('pexels-pixabay-45170.jpg');
+}
+
+/* Animationen */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

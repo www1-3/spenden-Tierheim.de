@@ -1,20 +1,53 @@
+/* BODY */
 body {
     font-family: 'Courier New', monospace;
     background-color: #f0f0f0;
+    margin: 0;
+    padding-top: 120px;
     text-align: center;
-    margin-top: 100px;
+    color: #333;
 }
 
+/* NAVIGATION */
+.top-nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #333;
+    background: #ddd;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.top-nav a:hover {
+    background-color: #bbb;
+}
+
+/* ÜBERSCHRIFT */
 .container {
-    font-size: 32px;
+    font-size: 48px;
     font-weight: bold;
-    display: inline-block;
-    color: orange;
+    color: #4A90E2;
+    margin-bottom: 40px;
 }
 
+/* CURSOR */
 .cursor {
     display: inline-block;
-    color: black;
     animation: blink 0.7s infinite;
 }
 
@@ -22,46 +55,78 @@ body {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
-/* Navigationsleiste oben rechts */
-.top-nav {
-    position: absolute;
-    top: 20px;
-    right: 20px; /* statt left: 20px */
+
+/* TEXTBEREICH */
+#über {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-.top-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-}
-
-.top-nav li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    background-color: #ddd;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.top-nav li a:hover {
-    background-color: #bbb;
-}
-.demo-card-image.mdl-card {
-  width: 256px;
-  height: 256px;
-  background: url('../assets/demos/image_card.jpg') center / cover;
-
-}
+/* BILDER KARTEN */
 .demo-card-image {
-      display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 450px; /* größer als vorher */
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
 }
-.text {
-    position: relative;
-  top: 40px;
+
+/* OPTIONAL: kleiner Hover-Effekt für Bilder */
+.demo-card-image:hover {
+    transform: scale(1.05);
+}
+
+/* OBERE 2 BILDER */
+.top-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* UNTERE 2 BILDER */
+.bottom-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 100px;
+}
+
+/* BILD-PFAD ZUWEISUNGEN - passe an deine Dateinamen an */
+.top-images .demo-card-image:nth-child(1) {
+    background-image: url('v872batch10-nunny-05a.jpg');
+}
+.top-images .demo-card-image:nth-child(2) {
+    background-image: url('Berlin_Tierheim_in_Falkenberg_asv2022-07.jpg');
+}
+
+.bottom-images .demo-card-image:nth-child(1) {
+    background-image: url('v872batch10-nunny-05a.jpg');  /* hier dein 3. Bild */
+}
+.bottom-images .demo-card-image:nth-child(2) {
+    background-image: url('pexels-jonnylew-1547836.jpg');  /* hier dein 4. Bild */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 800px) {
+    .top-images, .bottom-images {
+        grid-template-columns: 1fr; /* Bilder untereinander auf kleinen Bildschirmen */
+    }
+    .container {
+        font-size: 36px;
+    }
+    #über {
+        padding: 20px;
+        font-size: 16px;
+    }
 }
